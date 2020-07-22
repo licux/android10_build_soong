@@ -94,6 +94,7 @@ var Configuration = map[string]PathConfig{
 	"javap":    Allowed,
 	"lsof":     Allowed,
 	"m4":       Allowed,
+	"make":     Allowed,
 	"openssl":  Allowed,
 	"patch":    Allowed,
 	"pstree":   Allowed,
@@ -112,17 +113,18 @@ var Configuration = map[string]PathConfig{
 
 	// Host toolchain is removed. In-tree toolchain should be used instead.
 	// GCC also can't find cc1 with this implementation.
-	"ar":         Forbidden,
-	"as":         Forbidden,
-	"cc":         Forbidden,
-	"clang":      Forbidden,
-	"clang++":    Forbidden,
-	"gcc":        Forbidden,
-	"g++":        Forbidden,
-	"ld":         Forbidden,
-	"ld.bfd":     Forbidden,
-	"ld.gold":    Forbidden,
-	"pkg-config": Forbidden,
+	"ar":         Allowed,
+	"as":         Allowed,
+	"cc":         Allowed,
+	"cc1":		  Allowed,
+	"clang":      Allowed,
+	"clang++":    Allowed,
+	"gcc":        Allowed,
+	"g++":        Allowed,
+	"ld":         Allowed,
+	"ld.bfd":     Allowed,
+	"ld.gold":    Allowed,
+	"pkg-config": Allowed,
 
 	// On Linux we'll use the toybox versions of these instead.
 	"basename":  LinuxOnlyPrebuilt,
